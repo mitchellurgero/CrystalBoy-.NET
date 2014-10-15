@@ -1,0 +1,9 @@
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulation\bin\Debug\CrystalBoy.Emulation.xml
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulation\bin\Debug\CrystalBoy.Emulation.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulation\bin\Debug\CrystalBoy.Emulation.pdb
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulation\bin\Debug\CrystalBoy.Core.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulation\bin\Debug\CrystalBoy.Core.pdb
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulation\bin\Debug\CrystalBoy.Core.xml
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulation\obj\Debug\CrystalBoy.Emulation.csprojResolveAssemblyReference.cache
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulation\obj\Debug\CrystalBoy.Emulation.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulation\obj\Debug\CrystalBoy.Emulation.pdb

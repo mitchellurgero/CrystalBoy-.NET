@@ -1,0 +1,14 @@
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\bin\Debug\CrystalBoy.Decompiler.exe.config
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\bin\Debug\CrystalBoy.Decompiler.exe
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\bin\Debug\CrystalBoy.Decompiler.pdb
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\bin\Debug\CrystalBoy.Core.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\bin\Debug\CrystalBoy.Core.Windows.Forms.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\bin\Debug\CrystalBoy.Core.Windows.Forms.pdb
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\bin\Debug\CrystalBoy.Core.pdb
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\bin\Debug\CrystalBoy.Core.xml
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\obj\Debug\CrystalBoy.Decompiler.csprojResolveAssemblyReference.cache
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\obj\Debug\CrystalBoy.Decompiler.MainForm.resources
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\obj\Debug\CrystalBoy.Decompiler.Properties.Resources.resources
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\obj\Debug\CrystalBoy.Decompiler.csproj.GenerateResource.Cache
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\obj\Debug\CrystalBoy.Decompiler.exe
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\obj\Debug\CrystalBoy.Decompiler.pdb

@@ -1,0 +1,922 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CrystalBoy.Emulation</name>
+    </assembly>
+    <members>
+        <member name="M:CrystalBoy.Emulation.AudioBuffer.GetRawBuffer">
+            <summary>Returns the current raw buffer.</summary>
+            <remarks>
+            Because we are working with generic buffers for greater flexibility,
+            the non-generic <see cref="T:CrystalBoy.Emulation.AudioBuffer"/> can only reference the base <see cref="T:System.Array"/> class.
+            The raw buffer is stored and provided by the <see cref="T:CrystalBoy.Emulation.AudioBuffer`1"/> generic subclass.
+            </remarks>
+            <returns>An <see cref="T:System.Array"/> representing the buffer currently in use.</returns>
+        </member>
+        <member name="P:CrystalBoy.Emulation.AudioBuffer.Position">
+            <summary>Gets the current position in the raw buffer.</summary>
+            <value>The position in the raw buffer.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.AudioBuffer.Length">
+            <summary>Gets the length of the raw buffer.</summary>
+            <value>The length of the raw buffer.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.AudioBuffer.SizeInBytes">
+            <summary>Gets the size of the buffer in bytes.</summary>
+            <value>The size of the buffer in bytes.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.AudioBuffer.RawBuffer">
+            <summary>Gets the raw buffer currently in use.</summary>
+            <value>The raw buffer.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.AudioBuffer.SampleType">
+            <summary>Gets the type of the samples.</summary>
+            <value>The type of the samples.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.AudioBuffer.BitsPerSample">
+            <summary>Gets the number of bits per sample .</summary>
+            <value>The number of bits per sample.</value>
+        </member>
+        <member name="M:CrystalBoy.Emulation.AudioBuffer`1.GetRawBuffer">
+            <summary>Returns the current raw buffer.</summary>
+            <returns>An <see cref="T:System.Array"/> representing the buffer currently in use.</returns>
+            <remarks>
+            Because we are working with generic buffers for greater flexibility,
+            the non-generic <see cref="T:CrystalBoy.Emulation.AudioBuffer"/> can only reference the base <see cref="T:System.Array"/> class.
+            The raw buffer is stored and provided by the <see cref="T:CrystalBoy.Emulation.AudioBuffer`1"/> generic subclass.
+            </remarks>
+        </member>
+        <member name="P:CrystalBoy.Emulation.AudioBuffer`1.Position">
+            <summary>
+            Gets the current position in the raw buffer.
+            </summary>
+            <value>The position in the raw buffer.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.AudioBuffer`1.Length">
+            <summary>Gets the length of the raw buffer.</summary>
+            <value>The length of the raw buffer.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.AudioBuffer`1.RawBuffer">
+            <summary>Gets the raw buffer currently in use.</summary>
+            <value>The raw buffer.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.AudioBuffer`1.SampleType">
+            <summary>Gets the type of the samples.</summary>
+            <value>The type of the samples.</value>
+        </member>
+        <member name="M:CrystalBoy.Emulation.AudioRenderer.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:CrystalBoy.Emulation.AudioRenderer"/> class.</summary>
+        </member>
+        <member name="M:CrystalBoy.Emulation.AudioRenderer.BeginBufferChange">
+            <summary>This method is called before changing the buffer.</summary>
+            <remarks>
+            The default implementation does nothing.
+            Override this method if you need to implement a specific behavior before changing the buffer.
+            </remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.AudioRenderer.EndBufferChange">
+            <summary>This method is called after changing the buffer.</summary>
+            <remarks>
+            The default implementation does nothing.
+            Override this method if you need to implement a specific behavior after changing the buffer.
+            </remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.AudioRenderer.IsAcceptableBuffer(CrystalBoy.Emulation.AudioBuffer)">
+            <summary>Determines whether the specified audio buffer is an acceptable buffer.</summary>
+            <param name="audioBuffer">The proposed audio buffer.</param>
+            <remarks>
+            This method will consider <c>null</c> as a valid buffer, even though it is not a buffer.
+            The following methods will be called to help determine if the buffer is acceptable:
+            <list type="bullet">
+            <item><description><see cref="M:CrystalBoy.Emulation.AudioRenderer.IsSampleTypeSupported(System.Type)"/></description></item>
+            </list>
+            </remarks>
+            <returns><c>true</c> if the specified audio buffer is acceptable; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="P:CrystalBoy.Emulation.AudioRenderer.AudioBuffer">
+            <summary>Gets or sets the audio buffer.</summary>
+            <remarks>
+            Changing the audio buffer is done in four steps:
+            <list type="number">
+            <item><description>Validate the proposed buffer by calling <see cref="M:CrystalBoy.Emulation.AudioRenderer.IsAcceptableBuffer(CrystalBoy.Emulation.AudioBuffer)"/>.</description></item>
+            <item><description>Prepare the change by calling <see cref="M:CrystalBoy.Emulation.AudioRenderer.BeginBufferChange"/>.</description></item>
+            <item><description>Actually change the buffer.</description></item>
+            <item><description>Terminate the change by calling <see cref="M:CrystalBoy.Emulation.AudioRenderer.EndBufferChange"/>.</description></item>
+            </list>
+            </remarks>
+            <value>The audio buffer.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.AudioRenderer.RenderObject">
+            <summary>Gets the object associated with this renderer.</summary>
+            <remarks>
+            This object will typically be a window or a control.
+            The implementation in <see cref="T:CrystalBoy.Emulation.AudioRenderer"/> always returns <c>null</c>.
+            </remarks>
+            <value>The object associated with this renderer.</value>
+        </member>
+        <member name="M:CrystalBoy.Emulation.AudioRenderer`1.#ctor(`0)">
+            <summary>Initializes a new instance of the <see cref="T:CrystalBoy.Emulation.AudioRenderer`1"/> class.</summary>
+            <param name="renderObject">The object associated with this new renderer instance.</param>
+        </member>
+        <member name="P:CrystalBoy.Emulation.AudioRenderer`1.RenderObject">
+            <summary>Gets the object associated with this renderer.</summary>
+            <remarks>This object will typically be a window or a control, whose value will have been passed as a parameter in the consructor to <see cref="T:CrystalBoy.Emulation.AudioRenderer`1"/></remarks>
+            <value>The object associated with this renderer.</value>
+        </member>
+        <member name="T:CrystalBoy.Emulation.GameBoyClockManager">
+            <summary>Represent a basic clock manager for Game Boy emulation.</summary>
+            <remarks>This implementation of <see cref="T:CrystalBoy.Emulation.IClockManager"/> will synchronize emualtion to 60 FPS.</remarks>
+        </member>
+        <member name="T:CrystalBoy.Emulation.IClockManager">
+            <summary>Provides a way of delaying events.</summary>
+            <remarks>This interface is used in <see cref="T:CrystalBoy.Emulation.GameBoyMemoryBus"/> to provide timing and limit the framerate.</remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.IClockManager.Reset">
+            <summary>Resets this instance.</summary>
+            <remarks>This method will be called every time the timing has to be restarted.</remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.IClockManager.Wait">
+            <summary>Wait before the next event.</summary>
+            <remarks>
+            This method will be called every time an event needs to be delayed.
+            The wait may be active, passive or hybrid, as desired.
+            There may even be no delay at all.
+            </remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyClockManager.Reset">
+            <summary>Resets this instance.</summary>
+            <remarks>This method will be called every time the timing has to be restarted.</remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyClockManager.Wait">
+            <summary>Wait before the next event.</summary>
+            <remarks>This method uses an hybrid wait, relying on <see cref="M:System.Threading.Thread.Sleep(System.Int32)"/> as much as possible.</remarks>
+        </member>
+        <member name="T:CrystalBoy.Emulation.VideoBufferReference">
+            <summary>Represents a reference to a video buffer.</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.VideoBufferReference.DataPointer">
+            <summary>Pointer to the image data.</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.VideoBufferReference.Stride">
+            <summary>The offset in bytes between two rows of pixels in the buffer.</summary>
+            <remarks>This value may be negative.</remarks>
+        </member>
+        <member name="T:CrystalBoy.Emulation.Mapper">
+            <summary>Represents a rom/ram/whatever mapper for Game Boy games cartridges.</summary>
+        </member>
+        <member name="M:CrystalBoy.Emulation.Mapper.Reset">
+            <summary>Resets the Mapper</summary>
+            <remarks>
+            The default Reset implementation performs the following operations
+            <list type="bullet">
+            <item>
+            <description>Caches the RAM pointer, which can change on each reset (only if the requested RAM grows)</description>
+            </item>
+            <item>
+            <description>Maps ROM bank 0 in the lower ROM area</description>
+            </item>
+            <item>
+            <description>Maps ROM bank 1 in the upper ROM area</description>
+            </item>
+            <item>
+            <description>Unmaps RAM from the RAM area</description>
+            </item>
+            <item>
+            <description>Sets the custom port value to 0</description>
+            </item>
+            </list>
+            If you override this methode, try to either call the base implementation, or repeat these (possibly customized) steps in your own method.
+            </remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.Mapper.MapRomBank(System.Boolean,System.Int32)">
+            <summary>Maps a ROM bank into the upper or lower ROM area.</summary>
+            <param name="upper">True for the upper ROM area, false for the lower one.</param>
+            <param name="bankIndex">Index of the ROM bank to map.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.Mapper.MapPort">
+            <summary>Maps a custom port into the RAM area.</summary>
+            <remarks>
+            The port is handled internally by the GameBoyMemoryBus object associated with the Mapper.
+            In the current implementation, it uses a 256 byte memory containing only one value, repeated all over the RAM area.
+            If you wish to change the value assigned to this memory, you can do so by using the SetPortValue method.
+            </remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.Mapper.SetPortValue(System.Byte)">
+            <summary>Sets the value assigned to the custom port memory.</summary>
+            <param name="value">Value to assign</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.Mapper.MapRamBank(System.Int32)">
+            <summary>Maps a RAM bank into the RAM area.</summary>
+            <param name="bankIndex">Index of the RAM bank to map</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.Mapper.UnmapRam">
+            <summary>Unmaps RAM from the RAM area.</summary>
+            <remarks>
+            By unmapping the RAM, you ensure that every unhandled read or write to the area will access an useless memory.
+            Thus, unless you implement your own version of HandleRamWrite, writes will never affect the real RAM.
+            This can be used by mappers that supports RAM enabling and disabling.
+            </remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.Mapper.HandleRomWrite(System.Byte,System.Byte,System.Byte)">
+            <summary>Handles a ROM write.</summary>
+            <param name="offsetLow">Less significant byte of the write offset</param>
+            <param name="offsetHigh">Most significant byte of the write offset</param>
+            <param name="value">Value written</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.Mapper.RamWritten">
+            <summary>Notifies of a write to external RAM.</summary>
+            <remarks>
+            Use this method while implementing RAM writes in a non-standard fashion.
+            By default, ram writes will be detected by the base Mapper implementation.
+            Detecting RAM writes allows for on-demand battery file writes.
+            The RamUpdated event will be triggered when unmapping the RAM, only if (real) ram writes were detected.
+            </remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.Mapper.HandleRamWriteInternal(System.Byte,System.Byte,System.Byte)">
+            <summary>Intercepts all RAM writes.</summary>
+            <param name="offsetLow">Less significant byte of the write offset</param>
+            <param name="offsetHigh">Most significant byte of the write offset</param>
+            <param name="value">Value written</param>
+            <remarks>This method will be used only for detecting ram updates transparently.</remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.Mapper.HandleRamWrite(System.Byte,System.Byte,System.Byte)">
+            <summary>Handles a RAM write.</summary>
+            <param name="offsetLow">Less significant byte of the write offset</param>
+            <param name="offsetHigh">Most significant byte of the write offset</param>
+            <param name="value">Value written</param>
+            <remarks>
+            The default implementation of HandleRamWrite does nothing.
+            If you impelement your own version, do not bother calling the base implementation (the one in Mapper) because it is useless.
+            However, please call the <see cref="M:CrystalBoy.Emulation.Mapper.RamWritten"/> method if you write directly to the external RAM.
+            </remarks>
+        </member>
+        <member name="E:CrystalBoy.Emulation.Mapper.RamUpdated">
+            <summary>Occurs when the external RAM has been updated.</summary>
+            <remarks>
+            Subclasses handling raw writes by themselves must carefully call the <see cref="M:CrystalBoy.Emulation.Mapper.RamWritten"/> method when needed in order for this event to get triggered.
+            Other subclasses will get the default automatic detection behavior, which should work fine in most, if not all cases.
+            </remarks>
+        </member>
+        <member name="P:CrystalBoy.Emulation.Mapper.Bus">
+            <summary>Gets the GameBoyMemoryBus associated with this Mapper</summary>
+        </member>
+        <member name="P:CrystalBoy.Emulation.Mapper.RamSize">
+            <summary>Gets the RAM Size requested by the mapper.</summary>
+            <remarks>
+            The default implementation returns the ram size provided by the ROM information.
+            If need to allocate more RAM for other purposes (memory mapped IO for example), override this propertie to request the proper amount of memory.
+            </remarks>
+        </member>
+        <member name="P:CrystalBoy.Emulation.Mapper.SavedRamSize">
+            <summary>Gets the size of the RAM to save.</summary>
+            <remarks>
+            The default implementation returns the value returned by RamSize.
+            If you requested more memory than what need to be saved, if battery is supported, just return the correct amount here.
+            The first RAM banks will always be saved first, so it is better to put your custom data in the last RAM banks.
+            </remarks>
+        </member>
+        <member name="P:CrystalBoy.Emulation.Mapper.InterceptsRamWrites">
+            <summary>Gets or sets a value indicating wether the Mapper handles RAM Writes.</summary>
+            <remarks>
+            The default Mapper implementation does not handle RAM Writes.
+            If you set this property to true, it is very likely that you need to override the HandleRamWrite method.
+            </remarks>
+        </member>
+        <member name="P:CrystalBoy.Emulation.Mapper.Ram">
+            <summary>Gets a pointer to the allocated RAM.</summary>
+        </member>
+        <member name="T:CrystalBoy.Emulation.Mappers.MemoryBankController">
+            <summary>Represents common features of MBC mappers.</summary>
+            <remarks>This class shall be used as a base class for MBC-derived mappers emulation.</remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.Mappers.MemoryBankController.#ctor(CrystalBoy.Emulation.GameBoyMemoryBus)">
+            <summary>Initializes a new instance of the <see cref="T:CrystalBoy.Emulation.Mappers.MemoryBankController"/> class.</summary>
+            <param name="bus">The memory bus associated with this instance.</param>
+        </member>
+        <member name="F:CrystalBoy.Emulation.PaletteAccess.Clock">
+            <summary>Time in Clock Cycles (Since the last VBlank).</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.PaletteAccess.Offset">
+            <summary>Palette data offset.</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.PaletteAccess.Value">
+            <summary>Value written to the register.</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.JOYP">
+            <summary>Joypad</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.SB">
+            <summary>Serial Transfer Byte</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.SC">
+            <summary>Serial Transfer Control</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.DIV">
+            <summary>Divider Register</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.TIMA">
+            <summary>Timer Counter</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.TMA">
+            <summary>Timer Modulo</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.TAC">
+            <summary>Timer Control</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.IF">
+            <summary>Interrupt Flag</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR10">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR11">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR12">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR13">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR14">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR21">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR22">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR23">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR24">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR30">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR31">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR32">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR33">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR34">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR41">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR42">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR43">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR44">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR50">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR51">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.NR52">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.LCDC">
+            <summary>LCD Control</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.STAT">
+            <summary>LCD Status</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.SCY">
+            <summary>Scroll Y</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.SCX">
+            <summary>Scroll X</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.LY">
+            <summary>LCD Y Coordinate</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.LYC">
+            <summary>LY Compare</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.DMA">
+            <summary>DMA Transfer and Start Address</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.BGP">
+            <summary>BG Palette Data</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.OBP0">
+            <summary>OBJ Palette 0 Data</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.OBP1">
+            <summary>OBJ Palette 1 Data</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.WY">
+            <summary>Window Y Position</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.WX">
+            <summary>Window X Position minus 7</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.KEY1">
+            <summary>Prepare Speed Switch</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.VBK">
+            <summary>Video RAM Bank</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.BLCK">
+            <summary>Bootstrap ROM Locking</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.HDMA1">
+            <summary>HBlank DMA Source, High Byte</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.HDMA2">
+            <summary>HBlank DMA Source, Low Byte</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.HDMA3">
+            <summary>HBlank DMA Destination, High Byte</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.HDMA4">
+            <summary>HBlank DMA Destination, Low Byte</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.HDMA5">
+            <summary>HBlank DMA Control</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.RP">
+            <summary>Infrared Communications Port</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.BCPS">
+            <summary>Background Palette Index</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.BCPD">
+            <summary>Background Palette Data</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.OCPS">
+            <summary>Object Palette Index</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.OCPD">
+            <summary>Object Palette Data</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.PMAP">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.SVBK">
+            <summary>WRAM  Bank</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.U72">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.U73">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.U74">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.U75">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.U76">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.U77">
+            <summary></summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.Port.IE">
+            <summary>Interrupt Enable</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.PortAccess.Clock">
+            <summary>
+            Time in Clock Cycles (Since the last VBlank)
+            </summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.PortAccess.Port">
+            <summary>
+            Port index
+            </summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.PortAccess.Value">
+            <summary>
+            Value written to the register
+            </summary>
+        </member>
+        <member name="T:CrystalBoy.Emulation.VideoRenderer">
+            <summary>Base class for a video renderer.</summary>
+            <remarks>
+            All video renderers must inherit from this class.
+            Generally, video renderers will not inherit directly from this class,
+            but will instead inherit from the generic class <see cref="T:CrystalBoy.Emulation.VideoRenderer`1"/>,
+            which provides strong coupling with a particular host.
+            All members of this class should be callable from another thread.
+            The implementor must take care of the synchrnonization where needed for its specific case.
+            For the time being, implementors can safely assume that drawing operations will only be called sequentially, even while coming from non UI threads.
+            I.e. While required to be thread-safe, the renderers do not need to be multithread-safe.
+            </remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.#ctor">
+            <summary>Initializes a new instance of the class <see cref="T:CrystalBoy.Emulation.VideoRenderer"/>.</summary>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.Reset">
+            <summary>Resets the video renderer.</summary>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.Dispose">
+            <summary>Disposes the managed resources allocated by this instance.</summary>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.LockBorderBuffer">
+            <summary>Locks the image buffer for the border, and returns a pointer to the updatable video memory.</summary>
+            <remarks>
+            The buffer returned should to be big enough to hold a 256x224 pixels image in the correct format. (Currently 32bpp)
+            Failure to return a valid buffer will lead to random crashes of the application.
+            </remarks>
+            <returns>A reference to the locked buffer.</returns>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.LockBorderBufferAsync">
+            <summary>Asynchronously lock the image buffer for the border, and returns a pointer to the updatable video memory.</summary>
+            <remarks>
+            The buffer returned should to be big enough to hold a 256x224 pixels image in the correct format. (Currently 32bpp)
+            Failure to return a valid buffer will lead to random crashes of the application.
+            </remarks>
+            <returns>A task representing the asynchronous operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/> property will contain a reference to the locked buffer.</returns>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.UnlockBorderBuffer">
+            <summary>Unlocks the image buffer for the border.</summary>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.UnlockBorderBufferAsync">
+            <summary>Asynchronously unlock the image buffer for the border.</summary>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.LockScreenBuffer">
+            <summary>Locks the image buffer for the screen, and returns a pointer to the updatable video memory.</summary>
+            <remarks>
+            The buffer returned should to be big enough to hold a 160x144 pixels image in the correct format. (Currently 32bpp)
+            Failure to return a valid buffer will lead to random crashes of the application.
+            </remarks>
+            <returns>A reference to the locked buffer.</returns>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.LockScreenBufferAsync">
+            <summary>Asynchronously lock the image buffer for the screen, and returns a pointer to the updatable video memory.</summary>
+            <remarks>
+            The buffer returned should be big enough to hold a 160x144 pixels image in the correct format. (Currently 32bpp)
+            Failure to return a valid buffer will lead to random crashes of the application.
+            </remarks>
+            <returns>A task representing the asynchronous operation. The <see cref="P:System.Threading.Tasks.Task`1.Result"/> property will contain a reference to the locked buffer.</returns>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.UnlockScreenBuffer">
+            <summary>Unlocks the image buffer for the screen.</summary>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.UnlockScreenBufferAsync">
+            <summary>Asynchronously unlock the image buffer for the screen.</summary>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.Render">
+            <summary>Presents the image to the screen.</summary>
+            <remarks>
+            The buffers should have been released before calling this method.
+            If not the case, the video renderer may legitimately crash, depending on the implementation.
+            </remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.RenderAsync">
+            <summary>Asynchronously present the image to the rendering device.</summary>
+            <remarks>
+            The buffers should have been released before calling this method.
+            If not the case, the video renderer may legitimately crash, depending on the implementation.
+            </remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.OnClearColorChanged(System.EventArgs)">
+            <summary>Handles a change in the value of the property <see cref="P:CrystalBoy.Emulation.VideoRenderer.ClearColor"/>.</summary>
+            <param name="e">Data associated with the event.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.OnBorderVisibleChanged(System.EventArgs)">
+            <summary>Handles a change in the value of the property <see cref="P:CrystalBoy.Emulation.VideoRenderer.BorderVisible"/>.</summary>
+            <param name="e">Data associated with the event.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.OnInterpolationChanged(System.EventArgs)">
+            <summary>Handles a change in the value of the property <see cref="P:CrystalBoy.Emulation.VideoRenderer.Interpolation"/>.</summary>
+            <param name="e">Data associated with the event.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer.GetRenderObject">
+            <summary>Gets the render object associated with this instance.</summary>
+            <remarks>
+            To allow for mor flexibility in design, the management of the render object is delegated to the derived class,
+            and this method is used to access the render object in an universal manner.
+            This method should be implemented by simply returning the private render object stored in the derived class.
+            </remarks>
+            <returns>The render object associated with this instance.</returns>
+        </member>
+        <member name="E:CrystalBoy.Emulation.VideoRenderer.ClearColorChanged">
+            <summary>Occurs when the <see cref="P:CrystalBoy.Emulation.VideoRenderer.ClearColor"/> property is changed.</summary>
+            <remarks>This event may be raised on any thread. Handlers should handle the synchrnonization as needed.</remarks>
+        </member>
+        <member name="E:CrystalBoy.Emulation.VideoRenderer.BorderVisibleChanged">
+            <summary>Occurs when the <see cref="P:CrystalBoy.Emulation.VideoRenderer.BorderVisible"/> property is changed.</summary>
+            <remarks>This event may be raised on any thread. Handlers should handle the synchrnonization as needed.</remarks>
+        </member>
+        <member name="E:CrystalBoy.Emulation.VideoRenderer.InterpolationChanged">
+            <summary>Occurs when the <see cref="P:CrystalBoy.Emulation.VideoRenderer.Interpolation"/> property is changed.</summary>
+            <remarks>This event may be raised on any thread. Handlers should handle the synchrnonization as needed.</remarks>
+        </member>
+        <member name="P:CrystalBoy.Emulation.VideoRenderer.SupportsInterpolation">
+            <summary>Gets a value indicating whether the video renderer supports interpolation.</summary>
+            <remarks>
+            The value returned by this property must be constant.
+            The default implementation always returns <c>false</c>.
+            Subclasses supporting interpolated rendering should override this property and always return <c>true</c>.
+            </remarks>
+            <value><c>true</c> if the video renderer supports interpolation; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.VideoRenderer.ClearColor">
+            <summary>Gets or sets the color used for clearing the render surface.</summary>
+        </member>
+        <member name="P:CrystalBoy.Emulation.VideoRenderer.BorderVisible">
+            <summary>Gets or sets a flag indicating whether the SGB border is visible.</summary>
+        </member>
+        <member name="P:CrystalBoy.Emulation.VideoRenderer.Interpolation">
+            <summary>Gets or sets a flag indicating whether interpolation is enabled.</summary>
+        </member>
+        <member name="P:CrystalBoy.Emulation.VideoRenderer.RenderObject">
+            <summary>Gets the render object associated with this instance.</summary>
+        </member>
+        <member name="T:CrystalBoy.Emulation.VideoRenderer`1">
+            <summary>This class is the base class for a video renderer supporting a specific type of render object.</summary>
+            <remarks>
+            The render object is a host specific object. Where host specific means that the type of object is related to the specific implementation of the emulator.
+            Usually, this will be a graphic object specific to the graphics framework used.
+            An emulator implemented with Windows Forms for the interface would use different plugins than an emulator implemented using DirectFB on linux, and this difference
+            would be enforced by the specific type of <see cref="T:CrystalBoy.Emulation.VideoRenderer"/> that the implementation looks up.
+            </remarks>
+            <typeparam name="TRenderObject">The type of render objects supported by the class.</typeparam>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer`1.#ctor(`0)">
+            <summary>Initializes a new instance of the class <see cref="T:CrystalBoy.Emulation.VideoRenderer`1"/>.</summary>
+            <param name="renderObject">The render object to which the new instance will be bound.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.VideoRenderer`1.GetRenderObject">
+            <summary>Gets the render object associated with this instance.</summary>
+            <remarks>This method simply returns the render object stored in this instance.</remarks>
+            <returns>The render object associated with this instance.</returns>
+        </member>
+        <member name="P:CrystalBoy.Emulation.VideoRenderer`1.RenderObject">
+            <summary>Gets the render object associated with this instance.</summary>
+            <remarks>
+            This property masks <see cref="P:CrystalBoy.Emulation.VideoRenderer.RenderObject"/> from the base class while returning the exact same value.
+            The only difference is that this property returns a value typed as <typeparamref name="TRenderObject"/>.
+            </remarks>
+        </member>
+        <member name="T:CrystalBoy.Emulation.GameBoyMemoryBus">
+            <summary>Represents the memory bus of a Game Boy system, with all its attached devices.</summary>
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:CrystalBoy.Emulation.GameBoyMemoryBus"/> class.</summary>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.#ctor(CrystalBoy.Core.MemoryBlock)">
+            <summary>Initializes a new instance of the <see cref="T:CrystalBoy.Emulation.GameBoyMemoryBus"/> class, preloaded with an external ROM.</summary>
+            <param name="externalRom">The external ROM to load.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.Finalize">
+            <summary>
+            Releases unmanaged resources and performs other cleanup operations before the
+            <see cref="T:CrystalBoy.Emulation.GameBoyMemoryBus"/> is reclaimed by garbage collection.
+            </summary>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.Dispose">
+            <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.Dispose(System.Boolean)">
+            <summary>Releases unmanaged and - optionally - managed resources.</summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.Initialize">
+            <summary>Initializes the emulated system.</summary>
+            <remarks>This will call the initialization methods for all modules.</remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.Reset">
+            <summary>Resets the emulated system.</summary>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.Reset(CrystalBoy.Emulation.HardwareType)">
+            <summary>Resets the emulated system and emulate a specific hardware.</summary>
+            <remarks>In order to chaneg the emulated hardware, the emulation has to be reset.</remarks>
+            <param name="hardwareType">Hardware to emulate.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.DrawBorder32(System.Byte*,System.Int32)">
+            <summary>Draws the SGB border into a 32 BPP buffer.</summary>
+            <param name="buffer">Destination pixel buffer.</param>
+            <param name="stride">Buffer line stride.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.DrawColorFrame32(System.Byte*,System.Int32)">
+            <summary>Draws the current frame into a 32 BPP buffer.</summary>
+            <param name="buffer">Destination pixel buffer.</param>
+            <param name="stride">Buffer line stride.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.DrawFrame32(System.Byte*,System.Int32)">
+            <summary>Draws the current frame into a 32 BPP buffer.</summary>
+            <param name="buffer">Destination buffer.</param>
+            <param name="stride">Buffer line stride.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.ReadByte(System.UInt16)">
+            <summary>Reads a <see cref="T:System.Byte"/> at the specified offset in Game Boy memory.</summary>
+            <param name="offset">The offset.</param>
+            <returns><see cref="T:System.Byte"/> representing the value at the specified offset.</returns>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.ReadByte(System.Byte,System.Byte)">
+            <summary>Reads a <see cref="T:System.Byte"/> at the specified offset in Game Boy memory.</summary>
+            <param name="offsetLow">The low byte of the offset.</param>
+            <param name="offsetHigh">The high byte of the offset.</param>
+            <returns><see cref="T:System.Byte"/> representing the value at the specified offset.</returns>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.WriteByte(System.UInt16,System.Byte)">
+            <summary>Writes a <see cref="T:System.Byte"/> at the specified offset in Game Boy memory.</summary>
+            <param name="offset">The offset.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.WriteByte(System.Byte,System.Byte,System.Byte)">
+            <summary>Writes a <see cref="T:System.Byte"/> at the specified offset in Game Boy memory.</summary>
+            <param name="offsetLow">The low byte of the offset.</param>
+            <param name="offsetHigh">The high byte of the offset.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.RamWritePassthrough(System.Byte,System.Byte,System.Byte)">
+            <summary>Safely writes a <see cref="T:System.Byte"/> directly to the external RAM area.</summary>
+            <remarks>
+            This method will only write data to the external RAM area, bypassing any write handler.
+            External RAM won't be affected if not mapped.
+            </remarks>
+            <param name="offsetLow">The low byte of the offset.</param>
+            <param name="offsetHigh">The high byte of the offset.</param>
+            <param name="value">The byte value to write.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.WritePort(System.Byte,System.Byte,System.Byte)">
+            <summary>Writes a <see cref="T:System.Byte"/> to the specified port memory offset.</summary>
+            <remarks>
+            High byte of port memory always is 0xFF.
+            This method is only here to serve as a memory write handler for port memory.
+            Regular port memory accesses should use the <see cref="M:CrystalBoy.Emulation.GameBoyMemoryBus.WritePort(System.Byte,System.Byte)"/> method.
+            </remarks>
+            <param name="offsetLow">The offset low.</param>
+            <param name="offsetHigh">The offset high. This parameter is ignored.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.InitializeBootRom">
+            <summary>Initializes the bootstrap ROM module.</summary>
+            <remarks>This will be called by the main <see cref="M:CrystalBoy.Emulation.GameBoyMemoryBus.Initialize"/> method.</remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.ResetBootRom">
+            <summary>Resets the bootstrap ROM module.</summary>
+            <remarks>This will be called by the main <see cref="M:CrystalBoy.Emulation.GameBoyMemoryBus.Reset(CrystalBoy.Emulation.HardwareType)"/> method.</remarks>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.TryLoadingRom(CrystalBoy.Emulation.HardwareType,System.String)">
+            <summary>Tries to load the specified bootsrap ROM from assembly resources.</summary>
+            <remarks>
+            The various known bootstrap ROMs can be embedded in the executable image during compilation.
+            By default, the emulator will look for resources with these names:
+            <list type="table">
+            <listheader>
+            <term>Hardware</term>
+            <description>Bootstrap ROM file name</description>
+            </listheader>
+            <item>
+            <term>Game Boy</term>
+            <description>dmg.rom</description>
+            </item>
+            <item>
+            <term>Super Game Boy</term>
+            <description>sgb.rom</description>
+            </item>
+            <item>
+            <term>Game Boy Color</term>
+            <description>cgb.rom</description>
+            </item>
+            </list>
+            Embedding these ROMs post-build should be possible with the help of an external tool,
+            but the easiest solution is probably to rebuild everything after having put the ROMs in the correct place.
+            </remarks>
+            <param name="hardwareType">Hardware whose bootstrap ROM should be loaded.</param>
+            <param name="resourceName">Name of the resource which contain the ROM data.</param>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.LoadBootRom(CrystalBoy.Emulation.HardwareType,System.Byte[])">
+            <summary>Loads a bootstrap ROM with the specified data.</summary>
+            <remarks>Data integrity will be checked to ensure a correct bootstrap ROM gets loaded.</remarks>
+            <param name="hardwareType">Hardware whose bootstrap ROM should be loaded.</param>
+            <param name="data">Data of the specified bootstrap ROM.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value provided for harware type is not a valid one.</exception>
+            <exception cref="T:System.NotSupportedException">Loading the bootstrap ROM the specified hardware is not supported.</exception>
+            <exception cref="T:System.IO.InvalidDataException">Data integrity check failed.</exception>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.Equals(System.Byte[],System.Byte[])">
+            <summary>Compares two byte arrays for equality.</summary>
+            <remarks>This method is used to compare the MD5 hashes of the various bootstrap ROM.</remarks>
+            <param name="a">First byte array to compare.</param>
+            <param name="b">Second byte array to compare.</param>
+            <returns><c>true</c> if the two arrays are equals;  otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:CrystalBoy.Emulation.GameBoyMemoryBus.IsBootRomLoaded(CrystalBoy.Emulation.HardwareType)">
+            <summary>Determines whether the bootstrap ROM for the specified hardware has been loaded.</summary>
+            <param name="hardwareType">Type of hardware.</param>
+            <returns><c>true</c> if the bootstrap ROM for the specified hardware has been loaded; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="P:CrystalBoy.Emulation.GameBoyMemoryBus.HardwareType">
+            <summary>Gets the emulated hardware.</summary>
+            <value>The emulated hardware.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.GameBoyMemoryBus.ColorHardware">
+            <summary>Gets a value indicating whether the emulated hardware supports Game Boy Color functions.</summary>
+            <remarks>
+            The only harware supporting Game Boy Color functions are:
+            <list type="bullet">
+            <item><description>Game Boy Color</description></item>
+            <item><description>Game Boy Advance</description></item>
+            </list>
+            </remarks>
+            <value><c>true</c> if the emulated harware supports color functions; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.GameBoyMemoryBus.ColorMode">
+            <summary>Gets a value indicating whether the emulated system is running in color mode.</summary>
+            <remarks>
+            When using the Game Boy Color bootstrap ROM, the emulation always starts in color mode.
+            However, the bootstrap ROM will switch the system to a pseudo-black-and-white mode if the inserted game doesn't support Game Boy Color functions.
+            </remarks>
+            <value><c>true</c> if the emulated system is running in color mode; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.GameBoyMemoryBus.SuperGameBoyFunctions">
+            <summary>Gets a value indicating whether the emulated system has super game boy functions enabled.</summary>
+            <value><c>true</c> if the emulated system has super game boy functions enabled; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.GameBoyMemoryBus.SynchronizationContext">
+            <summary>Gets or sets the synchronization context used by this instance.</summary>
+            <value>The synchronization context.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.GameBoyMemoryBus.PressedKeys">
+            <summary>Gets or sets the pressed keys for the main joypad.</summary>
+            <remarks>
+            The main joypad is the one and only joypad on game boy hardware.
+            Only Super Game Boy hardware allows up to four joypads in SGB mode, thanks to the SNES hardware.
+            </remarks>
+            <value>The pressed keys.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.GameBoyMemoryBus.Joypads">
+            <summary>Gets access to the joypad state of this instance.</summary>
+            <remarks>Use the returned value to read or update the state of any of the four joypads.</remarks>
+            <value>The <see cref="T:CrystalBoy.Emulation.GameBoyMemoryBus.JoypadState"/> for this instance.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.GameBoyMemoryBus.Item(System.UInt16)">
+            <summary>Reads or writes a <see cref="T:System.Byte"/> at the specified offset in Game Boy memory.</summary>
+            <value><see cref="T:System.Byte"/> value.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.GameBoyMemoryBus.Item(System.Byte,System.Byte)">
+            <summary>Reads or writes a <see cref="T:System.Byte"/> at the specified offset in Game Boy memory.</summary>
+            <value><see cref="T:System.Byte"/> value.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.GameBoyMemoryBus.UseBootRom">
+            <summary>Gets a value indicating whether a bootstrap ROM is being used.</summary>
+            <value><c>true</c> if a bootstrap ROM is being used; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:CrystalBoy.Emulation.GameBoyMemoryBus.TryUsingBootRom">
+            <summary>Gets or sets a value indicating whether a bootstrap ROM should be used when available.</summary>
+            <value><c>true</c> if available bootstrap ROMs should be used; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:CrystalBoy.Emulation.GameBoyMemoryBus.JoypadState">
+            <summary>Represents the state of the joypad(s) of an emulated game boy system.</summary>
+            <remarks>Four joypads are emulated.</remarks>
+        </member>
+        <member name="P:CrystalBoy.Emulation.GameBoyMemoryBus.JoypadState.Item(System.Int32)">
+            <summary>Gets or sets the pressed <see cref="T:CrystalBoy.Emulation.GameBoyKeys"/> for the joypad with the specified index.</summary>
+            <value>The pressed keys.</value>
+        </member>
+        <member name="T:CrystalBoy.Emulation.HardwareType">
+            <summary>Represent an emulated hardware type.</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.HardwareType.GameBoy">
+            <summary>Original Game Boy</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.HardwareType.GameBoyPocket">
+            <summary>Pocket Game Boy</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.HardwareType.SuperGameBoy">
+            <summary>Super Game Boy</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.HardwareType.SuperGameBoy2">
+            <summary>Super Game Boy 2</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.HardwareType.GameBoyColor">
+            <summary>Game Boy Color</summary>
+        </member>
+        <member name="F:CrystalBoy.Emulation.HardwareType.SuperGameBoyColor">
+            <summary>Super Game Boy + Game Boy Color</summary>
+            <remarks>This is used for combining Game Boy Color emulation with Super Game Boy emulation, and doesn't represent real hardware.</remarks>
+        </member>
+        <member name="F:CrystalBoy.Emulation.HardwareType.GameBoyAdvance">
+            <summary>Game Boy Advance</summary>
+            <remarks>This is mostly like a Game Boy Color when GB(C) games are concerned.</remarks>
+        </member>
+        <member name="F:CrystalBoy.Emulation.HardwareType.SuperGameBoyAdvance">
+            <summary>Super Game Boy + Game Boy Advance</summary>
+            <remarks>This is used for combining Game Boy Advance emulation with Super Game Boy emulation, and doesn't represent real hardware.</remarks>
+        </member>
+    </members>
+</doc>

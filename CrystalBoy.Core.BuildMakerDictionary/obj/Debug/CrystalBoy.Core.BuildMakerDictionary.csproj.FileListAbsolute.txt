@@ -1,0 +1,6 @@
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.BuildMakerDictionary\bin\Debug\CrystalBoy.Core.BuildMakerDictionary.exe.config
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.BuildMakerDictionary\bin\Debug\CrystalBoy.Core.BuildMakerDictionary.exe
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.BuildMakerDictionary\bin\Debug\CrystalBoy.Core.BuildMakerDictionary.pdb
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.BuildMakerDictionary\obj\Debug\CrystalBoy.Core.BuildMakerDictionary.csprojResolveAssemblyReference.cache
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.BuildMakerDictionary\obj\Debug\CrystalBoy.Core.BuildMakerDictionary.exe
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.BuildMakerDictionary\obj\Debug\CrystalBoy.Core.BuildMakerDictionary.pdb

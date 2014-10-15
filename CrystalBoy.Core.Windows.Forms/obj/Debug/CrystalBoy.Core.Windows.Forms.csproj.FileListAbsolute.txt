@@ -1,0 +1,8 @@
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.Windows.Forms\bin\Debug\CrystalBoy.Core.Windows.Forms.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.Windows.Forms\bin\Debug\CrystalBoy.Core.Windows.Forms.pdb
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.Windows.Forms\bin\Debug\CrystalBoy.Core.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.Windows.Forms\bin\Debug\CrystalBoy.Core.pdb
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.Windows.Forms\bin\Debug\CrystalBoy.Core.xml
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.Windows.Forms\obj\Debug\CrystalBoy.Core.Windows.Forms.csprojResolveAssemblyReference.cache
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.Windows.Forms\obj\Debug\CrystalBoy.Core.Windows.Forms.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.Windows.Forms\obj\Debug\CrystalBoy.Core.Windows.Forms.pdb

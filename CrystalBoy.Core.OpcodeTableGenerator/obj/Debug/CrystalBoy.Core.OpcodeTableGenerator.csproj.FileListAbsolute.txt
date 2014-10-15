@@ -1,0 +1,5 @@
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.OpcodeTableGenerator\bin\Debug\OpcodeTableGenerator.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.OpcodeTableGenerator\bin\Debug\OpcodeTableGenerator.pdb
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.OpcodeTableGenerator\obj\Debug\CrystalBoy.Core.OpcodeTableGenerator.csprojResolveAssemblyReference.cache
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.OpcodeTableGenerator\obj\Debug\OpcodeTableGenerator.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core.OpcodeTableGenerator\obj\Debug\OpcodeTableGenerator.pdb

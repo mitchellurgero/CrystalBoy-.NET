@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CrystalBoy.Core</name>
+    </assembly>
+    <members>
+        <member name="M:CrystalBoy.Core.ColorPalette.#ctor(System.Int16[],System.Int32)">
+            <summary>Initializes a new instance of the <see cref="T:CrystalBoy.Core.ColorPalette"/> struct with the specified data and offset.</summary>
+            <remarks>A Game Boy palette is composed of 4 words (15 bits, not 16 bits), any parameter set specifying less than 4 values will not be considered as valid.</remarks>
+            <param name="data">The palette data.</param>
+            <param name="offset">The offset at which this palette starts in the data array.</param>
+            <exception cref="T:System.ArgumentNullException">The data array is <c>null</c>.</exception>
+            <exception cref="T:System.IndexOutOfRangeException">The specified offset is out of range.</exception>
+        </member>
+        <member name="M:CrystalBoy.Core.ColorPalette.Create(System.Int16[],System.Int32)">
+            <summary>Creates a <see cref="T:CrystalBoy.Core.ColorPalette"/> using the specified data and offset.</summary>
+            <remarks>
+            This implementation is used internally by <see cref="T:CrystalBoy.Core.FixedColorPalette"/> and assumes that the provided data is always valid.
+            This method does not throw any exception.
+            </remarks>
+            <param name="data">The palette data.</param>
+            <param name="offset">The offset at which this palette starts in the data array.</param>
+            <returns>ColorPalette referring to the specified data.</returns>
+        </member>
+        <member name="P:CrystalBoy.Core.ColorPalette.Item(System.Int32)">
+            <summary>Gets the palette value at the specified index.</summary>
+            <value>15 bit color value.</value>
+            <exception cref="T:System.IndexOutOfRangeException">The specified index is out of range.</exception>
+        </member>
+        <member name="T:CrystalBoy.Core.FixedColorPalette">
+            <summary>Represents a fixed color palette that can be used to color a monochrome Game Boy game.</summary>
+        </member>
+        <member name="M:CrystalBoy.Core.FixedColorPalette.#ctor(System.Int16[])">
+            <summary>Initializes a new instance of the <see cref="T:CrystalBoy.Core.FixedColorPalette"/> struct.</summary>
+            <remarks>
+            The palette data is represented by 12 words, each representing one color.
+            The data will be split into 3 palettes of 4 colors, used for object palette 0, object palette 1, and background.
+            </remarks>
+            <param name="data">An array of twelve <see cref="T:System.Int16"/> containing the palette data.</param>
+        </member>
+        <member name="M:CrystalBoy.Core.FixedColorPalette.#ctor(System.Int16[],System.Int32)">
+            <summary>Initializes a new instance of the <see cref="T:CrystalBoy.Core.FixedColorPalette"/> struct.</summary>
+            <remarks>
+            The palette data is represented by 12 words, each representing one color.
+            The data will be split into 3 palettes of 4 colors, used for background, object palette 0, and object palette 1.
+            </remarks>
+            <param name="data">An array of at least twelve <see cref="T:System.Int16"/> containing the palette data.</param>
+            <param name="offset">The offset of the first palette word.</param>
+        </member>
+        <member name="P:CrystalBoy.Core.FixedColorPalette.BackgroundPalette">
+            <summary>Gets the background palette.</summary>
+            <value>The background palette.</value>
+        </member>
+        <member name="P:CrystalBoy.Core.FixedColorPalette.ObjectPalette0">
+            <summary>Gets the object palette 0.</summary>
+            <value>The object palette0.</value>
+        </member>
+        <member name="P:CrystalBoy.Core.FixedColorPalette.ObjectPalette1">
+            <summary>Gets the object palette 1.</summary>
+            <value>The object palette1.</value>
+        </member>
+        <member name="M:CrystalBoy.Core.PaletteData.GetPaletteOffset(System.Byte)">
+            <summary>Gets the offset to the specified palette in the dictionary data.</summary>
+            <remarks>
+            This method does not check its input because it is internal.
+            Callers must ensure that <c>index</c> is always less than 192, otherwise an invalid offset will be generated.
+            </remarks>
+            <param name="index">The index of the palette.</param>
+            <returns>Offset to the specified palette in the dictionary data.</returns>
+        </member>
+        <member name="M:CrystalBoy.Core.PaletteData.FindPaletteIndex(System.String,System.Byte,System.Byte)">
+            <summary>Finds the index of the palette corresponding to the specified nintendo game.</summary>
+            <remarks>
+            This methods finds the palette index the same way the GBC BIOS would have.
+            In fact, only Nintendo games have an automatically affected palette.
+            </remarks>
+            <param name="makerCode">The official maker code of the game.</param>
+            <param name="checksum">The checksum of the game's title's.</param>
+            <param name="complement">The fourth byte of the game's title.</param>
+            <returns>Index of the palette to use for the game.</returns>
+        </member>
+        <member name="M:CrystalBoy.Core.PaletteData.GetPaletteData(System.Byte)">
+            <summary>Gets the data for the palette with the specified index.</summary>
+            <param name="index">The requested palette index.</param>
+            <returns>Palette data.</returns>
+        </member>
+        <member name="M:CrystalBoy.Core.PaletteData.GetPalette(System.Byte)">
+            <summary>Gets the palette with the specified index.</summary>
+            <param name="index">The requested palette index.</param>
+            <returns>A <see cref="T:CrystalBoy.Core.FixedColorPalette"/> structure representing the palette.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,11 @@
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator.Rendering.GdiPlus\bin\Debug\Rendering.GdiPlus.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator.Rendering.GdiPlus\bin\Debug\Rendering.GdiPlus.pdb
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator.Rendering.GdiPlus\bin\Debug\CrystalBoy.Emulation.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator.Rendering.GdiPlus\bin\Debug\CrystalBoy.Core.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator.Rendering.GdiPlus\bin\Debug\CrystalBoy.Emulation.pdb
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator.Rendering.GdiPlus\bin\Debug\CrystalBoy.Emulation.xml
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator.Rendering.GdiPlus\bin\Debug\CrystalBoy.Core.pdb
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator.Rendering.GdiPlus\bin\Debug\CrystalBoy.Core.xml
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator.Rendering.GdiPlus\obj\Debug\CrystalBoy.Emulator.Rendering.GdiPlus.csprojResolveAssemblyReference.cache
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator.Rendering.GdiPlus\obj\Debug\Rendering.GdiPlus.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator.Rendering.GdiPlus\obj\Debug\Rendering.GdiPlus.pdb

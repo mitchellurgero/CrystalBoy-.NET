@@ -1,0 +1,6 @@
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core\bin\Debug\CrystalBoy.Core.xml
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core\bin\Debug\CrystalBoy.Core.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core\bin\Debug\CrystalBoy.Core.pdb
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core\obj\Debug\CrystalBoy.Core.csprojResolveAssemblyReference.cache
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core\obj\Debug\CrystalBoy.Core.dll
+C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Core\obj\Debug\CrystalBoy.Core.pdb
