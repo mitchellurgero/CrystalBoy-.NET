@@ -12,3 +12,6 @@ C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decomp
 C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\obj\Debug\CrystalBoy.Decompiler.csproj.GenerateResource.Cache
 C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\obj\Debug\CrystalBoy.Decompiler.exe
 C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Decompiler\obj\Debug\CrystalBoy.Decompiler.pdb
+C:\Users\mitchell.urgero\Documents\GitHub\CrystalBoy-.NET\CrystalBoy.Decompiler\bin\Debug\CrystalBoy.Decompiler.exe.config
+C:\Users\mitchell.urgero\Documents\GitHub\CrystalBoy-.NET\CrystalBoy.Decompiler\obj\Debug\CrystalBoy.Decompiler.exe
+C:\Users\mitchell.urgero\Documents\GitHub\CrystalBoy-.NET\CrystalBoy.Decompiler\obj\Debug\CrystalBoy.Decompiler.pdb

@@ -1,5 +1,5 @@
-System.IO.FileNotFoundException: Could not load file or assembly 'file:///C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator\bin\Debug\Rendering.Direct3D.dll' or one of its dependencies. The system cannot find the file specified.
-File name: 'file:///C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator\bin\Debug\Rendering.Direct3D.dll'
+System.IO.FileNotFoundException: Could not load file or assembly 'file:///C:\Users\mitchell.urgero\Documents\GitHub\CrystalBoy-.NET\CrystalBoy.Emulator\bin\Debug\Rendering.Direct3D.dll' or one of its dependencies. The system cannot find the file specified.
+File name: 'file:///C:\Users\mitchell.urgero\Documents\GitHub\CrystalBoy-.NET\CrystalBoy.Emulator\bin\Debug\Rendering.Direct3D.dll'
    at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
    at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
    at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
@@ -7,21 +7,13 @@ File name: 'file:///C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-on
    at System.Reflection.Assembly.LoadFrom(String assemblyFile)
    at CrystalBoy.Emulator.Program.LoadPluginAssemblies() in c:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator\Program.cs:line 154
 
-=== Pre-bind state information ===
-LOG: Where-ref bind. Location = C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator\bin\Debug\Rendering.Direct3D.dll
-LOG: Appbase = file:///C:/Users/mitchell.urgero/Documents/GitHub/crystalboy-read-only/CrystalBoy.Emulator/bin/Debug/
-LOG: Initial PrivatePath = NULL
-Calling assembly : (Unknown).
-===
-LOG: This bind starts in LoadFrom load context.
-WRN: Native image will not be probed in LoadFrom context. Native image will only be probed in default load context, like with Assembly.Load().
-LOG: Using application configuration file: C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator\bin\Debug\CrystalBoy.vshost.exe.Config
-LOG: Using host configuration file: 
-LOG: Using machine configuration file from C:\Windows\Microsoft.NET\Framework64\v4.0.30319\config\machine.config.
-LOG: Attempting download of new URL file:///C:/Users/mitchell.urgero/Documents/GitHub/crystalboy-read-only/CrystalBoy.Emulator/bin/Debug/Rendering.Direct3D.dll.
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
 
-System.IO.FileNotFoundException: Could not load file or assembly 'file:///C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator\bin\Debug\Rendering.SlimDX.dll' or one of its dependencies. The system cannot find the file specified.
-File name: 'file:///C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator\bin\Debug\Rendering.SlimDX.dll'
+System.IO.FileNotFoundException: Could not load file or assembly 'file:///C:\Users\mitchell.urgero\Documents\GitHub\CrystalBoy-.NET\CrystalBoy.Emulator\bin\Debug\Rendering.SlimDX.dll' or one of its dependencies. The system cannot find the file specified.
+File name: 'file:///C:\Users\mitchell.urgero\Documents\GitHub\CrystalBoy-.NET\CrystalBoy.Emulator\bin\Debug\Rendering.SlimDX.dll'
    at System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
    at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
    at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
@@ -29,16 +21,8 @@ File name: 'file:///C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-on
    at System.Reflection.Assembly.LoadFrom(String assemblyFile)
    at CrystalBoy.Emulator.Program.LoadPluginAssemblies() in c:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator\Program.cs:line 154
 
-=== Pre-bind state information ===
-LOG: Where-ref bind. Location = C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator\bin\Debug\Rendering.SlimDX.dll
-LOG: Appbase = file:///C:/Users/mitchell.urgero/Documents/GitHub/crystalboy-read-only/CrystalBoy.Emulator/bin/Debug/
-LOG: Initial PrivatePath = NULL
-Calling assembly : (Unknown).
-===
-LOG: This bind starts in LoadFrom load context.
-WRN: Native image will not be probed in LoadFrom context. Native image will only be probed in default load context, like with Assembly.Load().
-LOG: Using application configuration file: C:\Users\mitchell.urgero\Documents\GitHub\crystalboy-read-only\CrystalBoy.Emulator\bin\Debug\CrystalBoy.vshost.exe.Config
-LOG: Using host configuration file: 
-LOG: Using machine configuration file from C:\Windows\Microsoft.NET\Framework64\v4.0.30319\config\machine.config.
-LOG: Attempting download of new URL file:///C:/Users/mitchell.urgero/Documents/GitHub/crystalboy-read-only/CrystalBoy.Emulator/bin/Debug/Rendering.SlimDX.dll.
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
 
